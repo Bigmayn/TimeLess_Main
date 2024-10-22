@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "TimeLess2",
+  "version": "1.0",
+  "description": "Timed notifications with custom messages and links",
+  "permissions": ["alarms", "storage", "tabs"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "48": "icon48.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "48": "icon48.png"
+  }
+}

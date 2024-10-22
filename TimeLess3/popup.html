@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TimeLess2</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      width: 300px;
+      padding: 16px;
+      background-color: white;
+      color: black;
+    }
+
+    .logo {
+      width: 128px;
+      height: 32px;
+      margin: 0 auto 24px;
+      display: block;
+    }
+
+    .tabs {
+      display: flex;
+      gap: 4px;
+      margin-bottom: 20px;
+      background: #f3f4f6;
+      padding: 8px;
+      border-radius: 8px;
+    }
+
+    .tab {
+      flex: 1;
+      padding: 8px;
+      border: none;
+      border-radius: 6px;
+      background: transparent;
+      cursor: pointer;
+      font-weight: bold;
+      color: #6b7280;
+      transition: all 0.2s;
+    }
+
+    .tab:hover {
+      background: rgba(59, 130, 246, 0.1);
+    }
+
+    .tab.active {
+      background: #3b82f6;
+      color: white;
+    }
+
+    .config-panel {
+      display: none;
+    }
+
+    .config-panel.active {
+      display: block;
+    }
+
+    .field-container {
+      background-color: rgba(59, 130, 246, 0.3);
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 24px;
+      box-sizing: border-box;
+    }
+
+    label {
+      display: block;
+      width: 100%;
+      margin-bottom: 8px;
+      font-weight: bold;
+      color: #1a1a1a;
+    }
+
+    input, select {
+      display: block;
+      width: calc(100% - 16px);
+      margin-bottom: 8px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      padding: 8px;
+      box-sizing: border-box;
+    }
+
+    .button-group {
+      display: flex;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    button {
+      flex: 1;
+      background-color: black;
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+
+    button:hover {
+      opacity: 0.8;
+    }
+
+    button.stop-btn {
+      background-color: #dc2626;
+    }
+
+    button.stop-btn:disabled {
+      background-color: #f87171;
+      cursor: not-allowed;
+    }
+
+    .day-checkbox {
+      display: inline-block;
+      width: auto;
+      margin-right: 8px;
+    }
+
+    .day-label {
+      display: inline-block;
+      width: 100%;
+      margin-bottom: 8px;
+      font-weight: normal;
+    }
+
+    #daysContainer .day-label:last-child {
+      margin-bottom: 0;
+    }
+
+    #status {
+      text-align: center;
+      margin-top: 16px;
+      color: #4CAF50;
+    }
+
+    .input-group {
+      margin-bottom: 16px;
+    }
+
+    .input-group:last-child {
+      margin-bottom: 0;
+    }
+
+    .config-status {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 16px;
+      padding: 8px;
+      border-radius: 6px;
+      background: #f3f4f6;
+    }
+
+    .status-indicator {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #9ca3af;
+    }
+
+    .status-indicator.active {
+      background: #22c55e;
+    }
+  </style>
+</head>
+<body>
+  <img src="TimeLessLogo.png" alt="TimeLess Logo" class="logo">
+  
+  <div class="tabs">
+    <button class="tab active" data-tab="1">1</button>
+    <button class="tab" data-tab="2">2</button>
+    <button class="tab" data-tab="3">3</button>
+    <button class="tab" data-tab="4">4</button>
+    <button class="tab" data-tab="5">5</button>
+  </div>
+
+  <div id="configPanels">
+    <!-- Config panels will be generated dynamically -->
+  </div>
+
+  <p id="status"></p>
+
+  <script src="popup.js"></script>
+</body>
+</html>
